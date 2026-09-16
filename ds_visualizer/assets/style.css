@@ -1,0 +1,252 @@
+/* ==========================================================
+   style.css
+   Dash automatically loads every file inside /assets, so this
+   file is picked up with zero extra configuration. It only
+   styles the className hooks used in app.py.
+   ========================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1220;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #e7e9f2;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 60px;
+}
+
+/* ---------------- header ---------------- */
+.header h1 {
+  margin: 0 0 4px;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #7bb2ff, #b18aff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.header p {
+  margin: 0 0 20px;
+  color: #9aa3c0;
+  font-size: 15px;
+}
+
+/* ---------------- selector + definition ---------------- */
+.top-row {
+  margin-bottom: 16px;
+}
+
+.selector-block label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #9aa3c0;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.selector-block .Select-control,
+.selector-block [class*="-control"] {
+  border-radius: 10px !important;
+}
+
+.definition-card {
+  background: #171a2b;
+  border: 1px solid #262b45;
+  border-left: 4px solid #7bb2ff;
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #d3d7ec;
+}
+
+.hash-notes {
+  margin-top: 10px;
+  background: #10132090;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: "Consolas", monospace;
+  font-size: 12.5px;
+  color: #9aa3c0;
+  white-space: pre-wrap;
+}
+
+/* ---------------- layout grid ---------------- */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-panel,
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ---------------- cards ---------------- */
+.controls-card,
+.viz-card,
+.info-card {
+  background: #171a2b;
+  border: 1px solid #262b45;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.controls-card h3,
+.viz-card h3,
+.info-card h3 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #cdd3ef;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---------------- controls ---------------- */
+.controls-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.controls-row input[type="text"] {
+  background: #0f1220;
+  border: 1px solid #2e3454;
+  border-radius: 8px;
+  color: #e7e9f2;
+  padding: 9px 12px;
+  font-size: 14px;
+  min-width: 160px;
+  outline: none;
+}
+
+.controls-row input[type="text"]:focus {
+  border-color: #7bb2ff;
+}
+
+.radio-row {
+  margin-bottom: 12px;
+  color: #9aa3c0;
+  font-size: 13.5px;
+}
+
+/* ---------------- buttons ---------------- */
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.06s ease, opacity 0.15s ease;
+}
+
+.btn:hover {
+  opacity: 0.88;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary   { background: #4f86c6; }
+.btn-danger    { background: #e05263; }
+.btn-info      { background: #3fa796; }
+.btn-secondary { background: #6a4c93; }
+.btn-reset     { background: #2e3454; }
+
+/* ---------------- traversal / status ---------------- */
+.traversal-order {
+  color: #9aa3c0;
+  font-size: 13.5px;
+  margin: 4px 0;
+}
+
+.status-message {
+  min-height: 18px;
+  color: #7bb2ff;
+  font-size: 13.5px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* ---------------- complexity table ---------------- */
+.complexity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.complexity-table th,
+.complexity-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #262b45;
+}
+
+.complexity-table th {
+  color: #9aa3c0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.04em;
+}
+
+.complexity-table td {
+  color: #e7e9f2;
+}
+
+.info-card + .info-card {
+  margin-top: 0;
+}
+
+/* ---------------- history log ---------------- */
+.history-log ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.history-log li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #21253d;
+  font-size: 13px;
+  color: #cdd3ef;
+}
+
+.history-log li:first-child {
+  color: #7bb2ff;
+  font-weight: 600;
+}
+
+.history-empty {
+  color: #666e91;
+  font-size: 13.5px;
+  font-style: italic;
+}
